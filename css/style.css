@@ -1,0 +1,44 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: lightblue;
+  text-align: center;
+}
+
+h1 {
+  background: white;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 28px;
+  margin: 100px 0;
+  font-family: arial, verdana;
+  outline: none;
+  padding: 14px 30px;
+  position: relative;
+  /* A little shadow for 3d effect */
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* The ribbon ends */
+h1:before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: -10%;
+  z-index: -1;
+  background: white;
+  width: 120%;
+  /* Use triangle logic - 2 sided borders and 0 height. That will create negative triangles on the left and right */
+  height: 0;
+  border: 28px solid transparent;
+  border-left-color: lightblue;
+  border-right-color: lightblue;
+}
+
+h1, h1:before, h1:after {
+  box-sizing: border-box;
+}
