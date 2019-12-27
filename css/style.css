@@ -4,17 +4,23 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  background: lightblue;
+  background: #B1E3E2;
+  box-shadow: inset 0 0 100px 20px #80D0CF;
   text-align: center;
 }
 
 h1 {
-  background: white;
   display: inline-block;
   font-size: 14px;
   line-height: 28px;
-  margin: 100px 0;
+  color: #8699A0;
+  text-shadow: 0 0 1px #758890;
+  margin: 120px 0;
   font-family: arial, verdana;
   outline: none;
   padding: 14px 30px;
@@ -24,7 +30,7 @@ h1 {
   /* Another shadow to negate some aspects of the :after element to complete the effect. This drops a shrinked shadow over the :after element with the same color like that of the background. The shadow is shrinked by the same offset amount = 18. And it is moved down by twice the offest amount to cover the entire height of the :after element */
   box-shadow:
     0 0 30px 0 rgba(0, 0, 0, 0.1),
-    0 36px 0 -18px lightblue;
+    0 36px 0 -18px #B1E3E2;
 }
 
 /* The ribbon ends */
@@ -32,14 +38,14 @@ h1:before {
   content: '';
   position: absolute;
   top: 18px;
-  left: -10%;
+  left: -15%;
   z-index: -1;
   width: 130%;
   /* Use triangle logic - 2 sided borders and 0 height. That will create negative triangles on the left and right */
   height: 0;
   border: 28px solid transparent;
-  border-left-color: lightblue;
-  border-right-color: lightblue;
+  border-left-color: #B1E3E2;
+  border-right-color: #B1E3E2;
 }
 
 /* After pseudo element will negate bottom part of the ribbon completing the effect */
@@ -64,6 +70,12 @@ h1, h1:before {
     linear-gradient(
       transparent 8%,
       rgba(0, 0, 0, 0.1) 8%,
+      rgba(0, 0, 0, 0.1) 14%,
+      transparent 14%,
+      transparent 86%,
+      rgba(0, 0, 0, 0.1) 86%,
+      rgba(0, 0, 0, 0.1) 92%,
+      transparent 92%
     ),
     /* white gloss gradient */
     linear-gradient(
@@ -74,15 +86,21 @@ h1, h1:before {
     linear-gradient(
       45deg,
       transparent 40%,
-      rgba(0, 0, 0, 0.2) 40%,
-      rgba(0, 0, 0, 0.2) 60%,
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0.1) 60%,
       transparent 60%
     ),
     /* white base */
     linear-gradient(white, white); /* white base */
-    background-size: cover, 4px 4px, cover;
+    background-size:
+      cover, /* borders */
+      cover, /* white gloss */
+      4px 4px, /* thin stripes */
+      cover; /* base white */
 }
 
 h1, h1:before, h1:after {
   box-sizing: border-box;
+  /* Fix to make the borders appear on the ribbon ends also */
+  background-origin: border-box;
 }
