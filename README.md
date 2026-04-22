@@ -1,11 +1,14 @@
 # Double Fold Ribbon
-CodePlayer Single Element Pure CSS3 Double Fold Ribbon project. Made with HTML and CSS.
+A ribbon with double folds with some text inside
+
+## Tech Stack
+- HTML
+- CSS
 
 ## Instructions
-Clone this repo or download zipe file. Open index.html file in your browser.
-
-## Contributions
-This code is based on starter code from TheCodePlayer.com. Therefore I will not be accepting any pull requests.
+1. Clone this repo or download zipe file. 
+2. Open index.html file in your browser.
+3. A ribbon will be near the top of the page with some text inside of it.
 
 ## Acknowledgements
 * TheCodePlayer.com
